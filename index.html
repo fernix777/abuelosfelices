@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header class="bg-light">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light align-items-center">
                 <a class="navbar-brand" href="#">
-                    <img src="/images/logoabuelos.png" width="100" height="100" class="d-inline-block align-top" alt="Logo">
-                    Residencia Abuelos Felices
+                    <img src="images/logoabuelos.png" class="d-inline-block align-top" alt="Logo Residencia Abuelos Felices">
+                    Residencia Adultos Felices
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,16 +23,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio</a>
+                            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre Nosotros</a>
+                            <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Servicios</a>
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#galeria">Galería</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -40,42 +44,103 @@
     </header>
 
     <main>
-        <section id="hero" class="container py-5">
-            <img src="images/abuelos1.jpg" alt="Imagen de bienvenida" class="img-fluid">
+        <section id="hero" class="container py-5 text-center">
+            <img src="images/abuelos1.jpg" alt="Imagen de bienvenida a la residencia Abuelos Felices" class="img-fluid mb-4 rounded">
             <h1>Cuidado y Calidez para tus Seres Queridos</h1>
-            <p>En Residencia Abuelos Felices, ofrecemos un hogar seguro, confortable y lleno de cariño para los adultos mayores. Nuestro equipo de profesionales está dedicado a brindar atención personalizada y servicios de alta calidad para garantizar el bienestar y la felicidad de nuestros residentes.</p>
+            <div class="row mt-4 text-center hero-icons-container">
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-heartbeat fa-3x mb-2"></i>
+                    <p>Emergencias 24 horas</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-hands-helping fa-3x mb-2"></i>
+                    <p>Asistencia Personalizada</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-user-nurse fa-3x mb-2"></i>
+                    <p>Personal Cualificado</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-smile-beam fa-3x mb-2"></i>
+                    <p>Ambiente Acogedor</p>
+                </div>
+            </div>
+            <p class="lead">En Residencia Adultos Felices, ofrecemos un hogar seguro, confortable y lleno de cariño para los adultos mayores. Nuestro equipo de profesionales está dedicado a brindar atención personalizada y servicios de alta calidad para garantizar el bienestar y la felicidad de nuestros residentes.</p>
         </section>
 
         <section id="sobre-nosotros" class="container py-5">
-            <h2>Nuestra Residencia</h2>
+            <h2 class="text-center mb-4">Nuestra Residencia</h2>
             <p>Somos una residencia de ancianos con una larga trayectoria en el cuidado de adultos mayores. Nuestra misión es proporcionar un ambiente cálido, seguro y estimulante donde nuestros residentes puedan disfrutar de una vida plena y activa. Contamos con un equipo de profesionales altamente cualificados y unas instalaciones modernas y confortables.</p>
         </section>
 
-        <section id="servicios" class="container py-5">
-            <h2>Servicios Personalizados</h2>
-            <p>Ofrecemos una amplia gama de servicios personalizados para satisfacer las necesidades individuales de cada residente. Estos servicios incluyen atención médica, asistencia personal, actividades recreativas, comidas nutritivas y mucho más.</p>
+        <section id="servicios" class="container py-5 bg-light rounded">
+            <h2 class="text-center mb-4">Servicios Personalizados</h2>
+            <p>Ofrecemos una amplia gama de servicios personalizados para satisfacer las necesidades individuales de cada residente. Estos servicios incluyen atención médica 24/7, asistencia personal para actividades diarias, programas de rehabilitación, actividades recreativas y sociales variadas, comidas nutritivas y dietas especiales adaptadas, y servicio de lavandería y limpieza.</p>
         </section>
 
         <section id="galeria" class="container py-5">
-            <h2>Momentos Felices</h2>
+            <h2 class="text-center mb-4">Momentos Felices</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <img src="images/abuelos2.jpg" alt="Imagen de la galería 1" class="img-fluid">
+                <div class="col-md-6 mb-3">
+                    <img src="images/abuelos2.jpg" alt="Residentes disfrutando de actividades en grupo" class="img-fluid rounded shadow">
                 </div>
-                <div class="col-md-6">
-                    <img src="images/abuelos3.jpg" alt="Imagen de la galería 2" class="img-fluid">
+                <div class="col-md-6 mb-3">
+                    <img src="images/abuelos3.jpg" alt="Instalaciones confortables de la residencia" class="img-fluid rounded shadow">
                 </div>
             </div>
         </section>
 
         <section id="contacto" class="container py-5">
-            <h2>Contáctanos</h2>
-            <p>Si deseas obtener más información sobre nuestros servicios o programar una visita, no dudes en ponerte en contacto con nosotros. Estaremos encantados de responder a tus preguntas y mostrarte nuestras instalaciones.</p>
+            <h2 class="text-center mb-4">Contáctanos</h2>
+            <p class="text-center">Si deseas obtener más información sobre nuestros servicios o programar una visita, no dudes en ponerte en contacto con nosotros. Estaremos encantados de responder a tus preguntas y mostrarte nuestras instalaciones.</p>
+            <!-- Aquí podrías añadir un formulario de contacto -->
         </section>
     </main>
 
-    <footer class="bg-light text-center py-3">
-        <p>&copy; 2025 Residencia Abuelos Felices</p>
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5>Navegación</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#hero" class="text-light">Inicio</a></li>
+                            <li><a href="#sobre-nosotros" class="text-light">Sobre Nosotros</a></li>
+                            <li><a href="#servicios" class="text-light">Servicios</a></li>
+                            <li><a href="#galeria" class="text-light">Galería</a></li>
+                            <li><a href="#contacto" class="text-light">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5>Contacto Rápido</h5>
+                        <p><i class="fas fa-phone mr-2"></i>+123 456 7890</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@adultosfelices.com</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Calle Falsa 123, Ciudad</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Suscríbete a Nuestro Boletín</h5>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-sm" placeholder="Tu correo electrónico">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm btn-block">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+                <hr class="my-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-0">&copy; 2024 Residencia Adultos Felices. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="social-icons">
+                            <a href="#" class="mr-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="mr-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

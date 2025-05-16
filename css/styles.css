@@ -1,22 +1,270 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: #343A40;
+/* Paleta de Colores y Fuentes Base */
+:root {
+    --primary-color: #D4A017; /* Ocre Dorado - llamativo y cálido */
+    --secondary-color: #4A707A; /* Teal Apagado - profesional y calmante */
+    --accent-color: #E67E22; /* Naranja - para toques vibrantes si es necesario */
+    
+    --text-color: #333333; /* Gris Oscuro - para legibilidad */
+    --text-light-color: #FFFFFF; /* Blanco - para fondos oscuros */
+    
+    --background-light: #FFFFFF; /* Blanco - para secciones principales */
+    --background-medium: #F8F9FA; /* Gris Claro - para alternar secciones o fondos sutiles */
+    --background-dark: #2c3e50; /* Azul Grisáceo Oscuro - para el pie de página */
+
+    --font-primary: 'Open Sans', sans-serif;
 }
 
-.navbar {
-    padding: 1rem 0;
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--background-medium); /* Fondo general sutil */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado y Navegación */
+header.bg-light { /* Bootstrap class override */
+    background-color: var(--background-light) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 0.5rem 0; /* Reducir padding vertical del header */
 }
 
 .navbar-brand {
-    font-weight: bold;
+    font-weight: 700; /* Más peso para la marca */
+    color: var(--secondary-color) !important; /* Color secundario para la marca */
+    font-size: 1.5rem; /* Tamaño de fuente para la marca */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Espacio entre logo y texto */
+    width: 120px; /* Aumentar ancho del logo */
+    height: 120px; /* Aumentar alto del logo */
+    object-fit: contain; /* Asegurar que la imagen se escale bien */
 }
 
 .navbar-nav .nav-link {
-    color: #343A40;
-    margin-left: 1rem;
+    color: var(--secondary-color);
+    margin-left: 1.5rem; /* Aumentar margen entre elementos de nav */
+    font-weight: 600; /* Ligeramente más grueso */
+    transition: color 0.3s ease;
 }
 
-h2,
-h3 {
-    color: #F5E7A2;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+    color: var(--primary-color); /* Color primario al pasar el mouse o activo */
 }
+
+.navbar-toggler {
+    border-color: rgba(0,0,0,0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(74, 112, 122, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--primary-color); /* Color primario para todos los títulos */
+    font-weight: 700; /* Títulos en negrita */
+}
+
+h1 {
+    font-size: 2.8rem; /* Tamaño para H1 */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.2rem; /* Tamaño para H2 */
+    margin-bottom: 1.5rem; /* Más espacio debajo de H2 */
+}
+
+/* Párrafo Principal (Lead) */
+.lead {
+    font-size: 1.15rem;
+    color: #5a5a5a; /* Un gris un poco más claro para el texto lead */
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Secciones */
+section {
+    padding: 4rem 0; /* Espaciado vertical para secciones */
+}
+
+section#hero {
+    background-color: var(--background-light); /* Fondo blanco para el héroe */
+    padding-top: 2rem; /* Menos padding superior para el hero si el header ya tiene sombra */
+}
+
+section#hero h1 {
+    /* display: flex; Ya no es necesario, los iconos están fuera */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center; /* Asegurar que el título esté centrado */
+    color: var(--secondary-color); /* Color secundario para el H1 del héroe para contraste */
+    margin-bottom: 2rem; /* Más espacio debajo del título principal */
+}
+
+.hero-icons-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos pasen a la siguiente línea en pantallas pequeñas */
+    justify-content: space-around; /* Distribuir espacio alrededor de los ítems */
+    align-items: flex-start; /* Alinear ítems al inicio verticalmente */
+}
+
+.hero-icon-item {
+    text-align: center; /* Centrar el contenido del ítem (icono y párrafo) */
+    margin-bottom: 1.5rem; /* Espacio debajo de cada ítem */
+    flex-basis: 200px; /* Base para el ancho, se ajustará con flex-grow si es necesario */
+    flex-grow: 1; /* Permitir que los ítems crezcan para llenar el espacio */
+    max-width: 25%; /* En pantallas grandes, no más de 4 por fila */
+}
+
+.hero-icon-item .fas {
+    font-size: 3rem; /* Tamaño de los iconos */
+    margin-bottom: 0.75rem; /* Espacio entre el icono y el texto */
+    color: var(--primary-color); /* Color primario general para los iconos */
+}
+
+/* Colores específicos para cada icono */
+.hero-icon-item .fa-heartbeat {
+    color: #e74c3c; /* Un rojo para el corazón */
+}
+
+.hero-icon-item .fa-hands-helping {
+    color: #3498db; /* Un azul para las manos */
+}
+
+.hero-icon-item .fa-user-nurse {
+    color: #2ecc71; /* Un verde para la enfermera */
+}
+
+.hero-icon-item .fa-smile-beam {
+    color: #f1c40f; /* Un amarillo para la sonrisa */
+}
+
+.hero-icon-item p {
+    font-size: 0.95rem; /* Tamaño del texto descriptivo */
+    color: var(--text-color); /* Color de texto estándar */
+    line-height: 1.4;
+    margin-bottom: 0; /* Quitar margen inferior del párrafo si no es necesario */
+}
+
+/* Media query para mejorar la responsividad en móviles */
+@media (max-width: 768px) {
+    .hero-icon-item {
+        max-width: 45%; /* 2 por fila en tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-icon-item {
+        max-width: 90%; /* 1 por fila en móviles */
+        flex-basis: 100%;
+    }
+    section#hero h1 {
+        font-size: 2.2rem; /* Reducir tamaño del H1 en móviles */
+    }
+}
+
+section#sobre-nosotros,
+section#galeria,
+section#contacto {
+    background-color: var(--background-light); /* Fondo blanco para estas secciones */
+}
+
+section#servicios { /* Esta sección tiene bg-light en HTML, la haremos destacar un poco */
+    background-color: var(--background-medium) !important; /* Usar el gris claro para alternar */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Imágenes */
+.img-fluid.rounded {
+    border-radius: 0.5rem !important; /* Bordes redondeados más suaves */
+}
+
+.img-fluid.shadow {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important; /* Sombra más pronunciada y suave */
+}
+
+/* Pie de Página */
+footer.bg-dark { /* Bootstrap class override */
+    background-color: var(--background-dark) !important;
+    color: var(--text-light-color);
+    padding: 2.5rem 0; /* Más padding para el footer */
+}
+
+footer h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+footer ul.list-unstyled li a {
+    color: var(--text-light-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+footer ul.list-unstyled li a:hover {
+    color: var(--primary-color);
+}
+
+footer .form-control-sm {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light-color);
+    font-size: 0.9rem;
+}
+
+footer .form-control-sm::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+}
+
+footer .btn-primary:hover {
+    background-color: #c08f15; /* Un tono más oscuro de --primary-color */
+    border-color: #c08f15;
+}
+
+footer p {
+    margin-bottom: 0.5rem; /* Ajustar margen inferior del párrafo */
+    font-size: 0.9rem;
+}
+
+/* Estilos para los iconos de redes sociales en el footer */
+.social-icons a {
+    color: var(--text-light-color);
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color); /* Color primario al pasar el mouse */
+}
+
+footer .social-icons a {
+    margin-right: 0.75rem; /* Ajustar margen entre iconos sociales */
+}
+
+footer .social-icons a:last-child {
+    margin-right: 0;
+}
+
+/* Utilidades Adicionales */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.bg-primary-custom { background-color: var(--primary-color) !important; color: var(--text-light-color); }
+.bg-secondary-custom { background-color: var(--secondary-color) !important; color: var(--text-light-color); }
