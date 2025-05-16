@@ -155,6 +155,23 @@ section#hero h1 {
     margin-bottom: 0; /* Quitar margen inferior del párrafo si no es necesario */
 }
 
+/* Estilos para el texto descriptivo debajo de los iconos del hero */
+.hero-description-text {
+    margin-top: 2.5rem; /* Aumentar el espacio superior, anula o complementa el mt-4 de Bootstrap */
+    text-align: justify; /* Justificar el texto para una mejor presentación */
+}
+
+.hero-description-text p {
+    font-size: 1rem; /* Ligeramente más grande que el texto de los iconos */
+    color: var(--text-color-dark); /* Un color de texto ligeramente más oscuro para contraste */
+    line-height: 1.6; /* Mejorar legibilidad */
+    margin-bottom: 1rem; /* Espacio entre párrafos */
+}
+
+.hero-description-text p:last-child {
+    margin-bottom: 0; /* Evitar margen extra al final del bloque */
+}
+
 /* Media query para mejorar la responsividad en móviles */
 @media (max-width: 768px) {
     .hero-icon-item {
@@ -261,6 +278,75 @@ footer .social-icons a {
 
 footer .social-icons a:last-child {
     margin-right: 0;
+}
+
+/* Estilos para la sección de Contacto con Formulario y Mapa */
+section#contacto .contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Para que en pantallas pequeñas se pongan uno debajo del otro */
+    gap: 2rem; /* Espacio entre el formulario y el mapa */
+}
+
+section#contacto .contact-form-container,
+section#contacto .contact-map-container {
+    flex: 1; /* Ambos ocupan el mismo espacio */
+    min-width: 300px; /* Ancho mínimo antes de que se rompa la línea */
+}
+
+section#contacto .form-control {
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+}
+
+section#contacto .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(212, 160, 23, 0.25); /* Sombra con color primario */
+}
+
+section#contacto .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+section#contacto .btn-primary:hover {
+    background-color: #c08f15; /* Un tono más oscuro de --primary-color */
+    border-color: #c08f15;
+}
+
+section#contacto .map-responsive {
+    overflow: hidden;
+    padding-bottom: 75%; /* Aspect ratio 4:3, ajustar si es necesario. (height/width*100) */
+    position: relative;
+    height: 0;
+    border: 1px solid #ddd; /* Borde sutil para el mapa */
+    border-radius: 0.25rem;
+}
+
+section#contacto .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0; /* Quitar borde del iframe si lo tuviera */
+}
+
+/* Media query para ajustar el layout en pantallas más pequeñas */
+@media (max-width: 768px) {
+    section#contacto .contact-wrapper {
+        flex-direction: column; /* Apilar formulario y mapa */
+    }
+    section#contacto .contact-form-container,
+    section#contacto .contact-map-container {
+        flex-basis: 100%; /* Ocupar todo el ancho */
+    }
+    section#contacto .map-responsive {
+        padding-bottom: 100%; /* Hacer el mapa más cuadrado en móviles si es necesario */
+    }
 }
 
 /* Utilidades Adicionales */
