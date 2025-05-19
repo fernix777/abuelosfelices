@@ -27,7 +27,7 @@ body {
 header.bg-light { /* Bootstrap class override */
     background-color: var(--background-light) !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    padding: 0.5rem 0; /* Reducir padding vertical del header */
+    padding: 1.5rem 0; /* Más padding vertical para acomodar el logo más grande */
 }
 
 .navbar-brand {
@@ -40,8 +40,8 @@ header.bg-light { /* Bootstrap class override */
 
 .navbar-brand img {
     margin-right: 10px; /* Espacio entre logo y texto */
-    width: 120px; /* Aumentar ancho del logo */
-    height: 120px; /* Aumentar alto del logo */
+    width: 160px; /* Aumentar más el ancho del logo */
+    height: 160px; /* Aumentar más el alto del logo */
     object-fit: contain; /* Asegurar que la imagen se escale bien */
 }
 
@@ -64,7 +64,6 @@ header.bg-light { /* Bootstrap class override */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(74, 112, 122, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-
 
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
@@ -102,9 +101,6 @@ section#hero {
 }
 
 section#hero h1 {
-    /* display: flex; Ya no es necesario, los iconos están fuera */
-    /* align-items: center; */
-    /* justify-content: center; */
     text-align: center; /* Asegurar que el título esté centrado */
     color: var(--secondary-color); /* Color secundario para el H1 del héroe para contraste */
     margin-bottom: 2rem; /* Más espacio debajo del título principal */
@@ -177,6 +173,13 @@ section#hero h1 {
     .hero-icon-item {
         max-width: 45%; /* 2 por fila en tablets */
     }
+    .navbar-brand img {
+        width: 100px;
+        height: 100px;
+    }
+    header.bg-light {
+        padding: 1rem 0;
+    }
 }
 
 @media (max-width: 576px) {
@@ -186,6 +189,13 @@ section#hero h1 {
     }
     section#hero h1 {
         font-size: 2.2rem; /* Reducir tamaño del H1 en móviles */
+    }
+    .navbar-brand img {
+        width: 70px;
+        height: 70px;
+    }
+    header.bg-light {
+        padding: 0.5rem 0;
     }
 }
 
@@ -354,3 +364,136 @@ section#contacto .map-responsive iframe {
 .text-secondary { color: var(--secondary-color) !important; }
 .bg-primary-custom { background-color: var(--primary-color) !important; color: var(--text-light-color); }
 .bg-secondary-custom { background-color: var(--secondary-color) !important; color: var(--text-light-color); }
+.hero-cta {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.85rem 2.2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 18px rgba(212, 160, 23, 0.12);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    letter-spacing: 0.5px;
+}
+.hero-cta:hover, .hero-cta:focus {
+    background: linear-gradient(90deg, #D4A017 60%, #E67E22 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(212, 160, 23, 0.18);
+    text-decoration: none;
+}
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.bg-primary-custom { background-color: var(--primary-color) !important; color: var(--text-light-color); }
+.bg-secondary-custom { background-color: var(--secondary-color) !important; color: var(--text-light-color); }
+@media (max-width: 992px) {
+    section {
+        padding: 2.5rem 0;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .hero-icons-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .hero-icon-item {
+        max-width: 48%;
+        flex-basis: 48%;
+    }
+    .navbar-brand img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 1.5rem 0;
+    }
+    .hero-icons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-icon-item {
+        max-width: 90%;
+        flex-basis: 100%;
+    }
+    .navbar-nav .nav-link {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+    .img-fluid.rounded, .img-fluid.shadow {
+        max-width: 100%;
+        height: auto;
+    }
+    footer.bg-dark {
+        padding: 1.2rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    .navbar-brand img {
+        width: 50px;
+        height: 50px;
+    }
+    .hero-description-text {
+        font-size: 0.95rem;
+        margin-top: 1.2rem;
+    }
+    .hero-cta {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    section#contacto .contact-wrapper {
+        gap: 1rem;
+    }
+    section#contacto .contact-form-container, section#contacto .contact-map-container {
+        min-width: unset;
+        padding: 0;
+    }
+    footer .social-icons a {
+        font-size: 1.1rem;
+        margin-right: 0.4rem;
+    }
+    footer h5 {
+        font-size: 1rem;
+    }
+}
+
+/* Mejoras generales para inputs y botones en móviles */
+@media (max-width: 576px) {
+    input, textarea, select, button {
+        font-size: 1rem;
+    }
+    section#contacto .form-control {
+        padding: 0.5rem;
+    }
+    section#contacto .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.bg-primary-custom { background-color: var(--primary-color) !important; color: var(--text-light-color); }
+.bg-secondary-custom { background-color: var(--secondary-color) !important; color: var(--text-light-color); }
+section#sobre-nosotros {
+    background-color: var(--background-dark);
+    color: var(--text-light-color);
+}
+section#galeria {
+    background-color: var(--secondary-color);
+    color: var(--text-light-color);
+}
