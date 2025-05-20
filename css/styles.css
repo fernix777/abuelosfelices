@@ -17,52 +17,302 @@
 body {
     font-family: var(--font-primary);
     color: var(--text-color);
-    background-color: var(--background-medium); /* Fondo general sutil */
+    background-color: var(--background-medium);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Encabezado y Navegación */
-header.bg-light { /* Bootstrap class override */
-    background-color: var(--background-light) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    padding: 1.5rem 0; /* Más padding vertical para acomodar el logo más grande */
+/* Estilos para la sección Hero con Header Integrado */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: url('../images/portadaweb.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    z-index: 1;
+}
+
+/* Transición suave después del hero */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 80%,
+        rgb(255, 255, 255) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ajuste para la sección principal */
+.main-content {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+    margin-top: -50px;
+    padding-top: 30px;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos para los iconos de servicios */
+#servicios .row > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicios .row > div:hover {
+    transform: translateY(-5px);
+}
+
+#servicios .bg-white {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+#servicios .bg-white:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    border-color: var(--primary-color);
+}
+
+#servicios i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+#servicios .row > div:hover i {
+    transform: scale(1.1);
+}
+
+#servicios h5 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 20px 80px; /* Aumentado el padding inferior para mejor espacio */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p.lead {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-cta {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 15px 35px !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.hero-cta:hover {
+    background-color: #e69500;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos del Header */
+.navbar {
+    padding: 1.5rem 0 !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
 }
 
 .navbar-brand {
-    font-weight: 700; /* Más peso para la marca */
-    color: var(--secondary-color) !important; /* Color secundario para la marca */
-    font-size: 1.5rem; /* Tamaño de fuente para la marca */
+    font-weight: 700;
+    color: white !important;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .navbar-brand img {
-    margin-right: 10px; /* Espacio entre logo y texto */
-    width: 160px; /* Aumentar más el ancho del logo */
-    height: 160px; /* Aumentar más el alto del logo */
-    object-fit: contain; /* Asegurar que la imagen se escale bien */
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link {
-    color: var(--secondary-color);
-    margin-left: 1.5rem; /* Aumentar margen entre elementos de nav */
-    font-weight: 600; /* Ligeramente más grueso */
-    transition: color 0.3s ease;
+    color: white !important;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 8px 15px !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    position: relative;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .navbar-nav .nav-link:hover,
-.navbar-nav .nav-item.active .nav-link {
-    color: var(--primary-color); /* Color primario al pasar el mouse o activo */
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.navbar-nav .nav-link:hover:before,
+.navbar-nav .nav-link.active:before {
+    width: 60%;
+}
+
+/* Estilos para el menú móvil */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 8px;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        padding: 10px 15px !important;
+    }
+    
+    .navbar-toggler {
+        padding: 0.4rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 }
 
 .navbar-toggler {
-    border-color: rgba(0,0,0,0.1);
+    border: none;
+    padding: 0.5rem;
+    color: white !important;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(74, 112, 122, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Ajustes para el menú colapsable */
+.navbar-collapse {
+    background-color: transparent !important;
+    padding: 0;
+    margin-top: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Estilos para el botón de contacto en el menú */
+.nav-contact-btn {
+    background-color: var(--primary-color);
+    color: white !important;
+    border-radius: 50px;
+    padding: 8px 20px !important;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-contact-btn:hover {
+    background-color: #e69500;
+    transform: translateY(-2px);
 }
 
 /* Títulos */
@@ -108,50 +358,51 @@ section#hero h1 {
 
 .hero-icons-container {
     display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos pasen a la siguiente línea en pantallas pequeñas */
-    justify-content: space-around; /* Distribuir espacio alrededor de los ítems */
-    align-items: flex-start; /* Alinear ítems al inicio verticalmente */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 -10px;
 }
 
 .hero-icon-item {
-    text-align: center; /* Centrar el contenido del ítem (icono y párrafo) */
-    margin-bottom: 1.5rem; /* Espacio debajo de cada ítem */
-    flex-basis: 200px; /* Base para el ancho, se ajustará con flex-grow si es necesario */
-    flex-grow: 1; /* Permitir que los ítems crezcan para llenar el espacio */
-    max-width: 25%; /* En pantallas grandes, no más de 4 por fila */
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
 }
 
-.hero-icon-item .fas {
-    font-size: 3rem; /* Tamaño de los iconos */
-    margin-bottom: 0.75rem; /* Espacio entre el icono y el texto */
-    color: var(--primary-color); /* Color primario general para los iconos */
+.hero-icon-item i {
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Colores específicos para cada icono */
-.hero-icon-item .fa-heartbeat {
-    color: #e74c3c; /* Un rojo para el corazón */
+.hero-icon-item:hover i {
+    transform: scale(1.1);
 }
 
-.hero-icon-item .fa-hands-helping {
-    color: #3498db; /* Un azul para las manos */
-}
-
-.hero-icon-item .fa-user-nurse {
-    color: #2ecc71; /* Un verde para la enfermera */
-}
-
-.hero-icon-item .fa-smile-beam {
-    color: #f1c40f; /* Un amarillo para la sonrisa */
-}
+/* Colores específicos para los iconos */
+.hero-icon-item .fa-user-nurse { color: #e74c3c; } /* Rojo para enfermería */
+.hero-icon-item .fa-stethoscope { color: #3498db; } /* Azul para médico */
+.hero-icon-item .fa-brain { color: #9b59b6; } /* Púrpura para salud mental */
+.hero-icon-item .fa-utensils { color: #e67e22; } /* Naranja para alimentación */
+.hero-icon-item .fa-home { color: #2ecc71; } /* Verde para estadía */
+.hero-icon-item .fa-heart { color: #e74c3c; } /* Rojo para ambiente */
+.hero-icon-item .fa-tshirt { color: #3498db; } /* Azul para lavandería */
+.hero-icon-item .fa-hands-wash { color: #2ecc71; } /* Verde para higiene */
 
 .hero-icon-item p {
-    font-size: 0.95rem; /* Tamaño del texto descriptivo */
-    color: var(--text-color); /* Color de texto estándar */
-    line-height: 1.4;
-    margin-bottom: 0; /* Quitar margen inferior del párrafo si no es necesario */
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    min-height: 2.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Estilos para el texto descriptivo debajo de los iconos del hero */
 .hero-description-text {
     margin-top: 2.5rem; /* Aumentar el espacio superior, anula o complementa el mt-4 de Bootstrap */
     text-align: justify; /* Justificar el texto para una mejor presentación */
@@ -383,57 +634,36 @@ section#contacto .map-responsive iframe {
 .text-primary { color: var(--primary-color) !important; }
 .text-secondary { color: var(--secondary-color) !important; }
 .bg-primary-custom { background-color: var(--primary-color) !important; color: var(--text-light-color); }
-.bg-secondary-custom { background-color: var(--secondary-color) !important; color: var(--text-light-color); }
-@media (max-width: 992px) {
-    section {
-        padding: 2.5rem 0;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.5rem;
-    }
-    .hero-icons-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-    .hero-icon-item {
-        max-width: 48%;
-        flex-basis: 48%;
-    }
-    .navbar-brand img {
-        width: 80px;
-        height: 80px;
-    }
+.bg-secondary-custom { 
+    background-color: var(--secondary-color) !important; 
+    color: var(--text-light-color);
 }
 
+/* Estilos generales para imágenes */
+.img-fluid.rounded, 
+.img-fluid.shadow {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos generales para el footer */
+footer.bg-dark {
+    padding: 2.5rem 0;
+}
+
+/* Estilos para la sección de contacto en móviles */
 @media (max-width: 768px) {
-    section {
-        padding: 1.5rem 0;
+    section#contacto .contact-wrapper {
+        flex-direction: column; /* Apilar formulario y mapa */
     }
-    .hero-icons-container {
-        flex-direction: column;
-        align-items: center;
+    
+    section#contacto .contact-form-container, 
+    section#contacto .contact-map-container {
+        flex-basis: 100%; /* Ocupar todo el ancho */
     }
-    .hero-icon-item {
-        max-width: 90%;
-        flex-basis: 100%;
-    }
-    .navbar-nav .nav-link {
-        margin-left: 0.5rem;
-        font-size: 1rem;
-    }
-    .lead {
-        font-size: 1rem;
-    }
-    .img-fluid.rounded, .img-fluid.shadow {
-        max-width: 100%;
-        height: auto;
-    }
-    footer.bg-dark {
-        padding: 1.2rem 0;
+    
+    section#contacto .map-responsive {
+        padding-bottom: 100%; /* Hacer el mapa más cuadrado en móviles si es necesario */
     }
 }
 
@@ -459,7 +689,8 @@ section#contacto .map-responsive iframe {
     section#contacto .contact-wrapper {
         gap: 1rem;
     }
-    section#contacto .contact-form-container, section#contacto .contact-map-container {
+    section#contacto .contact-form-container, 
+    section#contacto .contact-map-container {
         min-width: unset;
         padding: 0;
     }
@@ -470,10 +701,8 @@ section#contacto .map-responsive iframe {
     footer h5 {
         font-size: 1rem;
     }
-}
-
-/* Mejoras generales para inputs y botones en móviles */
-@media (max-width: 576px) {
+    
+    /* Mejoras generales para inputs y botones en móviles */
     input, textarea, select, button {
         font-size: 1rem;
     }

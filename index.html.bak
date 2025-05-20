@@ -199,10 +199,41 @@
     </section>
 
     <main class="main-content">
-        <section id="sobre-nosotros" class="container py-5">
-            <h2 class="text-center mb-4">Nuestra Residencia</h2>
-            <p>En nuestra residencia Adulto Feliz, la seguridad y el bienestar de nuestros usuarios son primordiales. Contamos con una sola planta que elimina las barreras y reduce los riesgos, permitiéndoles disfrutar plenamente de nuestros jardines, patio y la calidez de nuestro hogar. Además, contamos con personal de enfermería disponible las 24 horas del día, con amplia experiencia en el cuidado de adultos mayores, y ofrecemos terapias para promover su movilidad y bienestar integral. Este cuidado profesional continuo, sumado al ambiente familiar con detalles como escuchar música en tocadiscos y promover la autonomía de cada residente crea un entorno donde la tranquilidad es una constante.  Somos un hogar pensado para la comodidad y salud de nuestros seres queridos.</p>
-            
+        <section class="container py-5 text-center" id="sobre-nosotros">
+            <div class="row mt-4 text-center hero-icons-container">
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-user-nurse fa-3x mb-2"></i>
+                    <p>Enfermería 24 horas</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-stethoscope fa-3x mb-2"></i>
+                    <p>Visita Médica</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-brain fa-3x mb-2"></i>
+                    <p>Seguimiento en salud mental</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-utensils fa-3x mb-2"></i>
+                    <p>Alimentación balanceada</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-home fa-3x mb-2"></i>
+                    <p>Estadía permanente y temporal</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-heart fa-3x mb-2"></i>
+                    <p>Ambiente acogedor</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-tshirt fa-3x mb-2"></i>
+                    <p>Lavandería</p>
+                </div>
+                <div class="col-md-3 col-6 hero-icon-item">
+                    <i class="fas fa-hands-wash fa-3x mb-2"></i>
+                    <p>Higiene y cuidado personal</p>
+                </div>
+            </div>
             <div class="hero-description-text mt-4">
                 <p>En Residencia Adultos Felices, nos dedicamos a proporcionar un entorno seguro, confortable y lleno de afecto para nuestros mayores. Creemos firmemente que cada residente merece vivir con dignidad, respeto y alegría.</p>
                 <p>Nuestro equipo multidisciplinar de profesionales, que incluye médicos, enfermeras, terapeutas y cuidadores, está comprometido con la excelencia en el cuidado. Ofrecemos atención médica continua, programas de rehabilitación personalizados y asistencia en las actividades diarias, siempre con una sonrisa y un trato cercano.</p>
@@ -211,60 +242,14 @@
             </div>
         </section>
 
+        <section id="sobre-nosotros" class="container py-5">
+            <h2 class="text-center mb-4">Nuestra Residencia</h2>
+            <p>En nuestra residencia Adulto Feliz, la seguridad y el bienestar de nuestros usuarios son primordiales. Contamos con una sola planta que elimina las barreras y reduce los riesgos, permitiéndoles disfrutar plenamente de nuestros jardines, patio y la calidez de nuestro hogar. Además, contamos con personal de enfermería disponible las 24 horas del día, con amplia experiencia en el cuidado de adultos mayores, y ofrecemos terapias para promover su movilidad y bienestar integral. Este cuidado profesional continuo, sumado al ambiente familiar con detalles como escuchar música en tocadiscos y promover la autonomía de cada residente crea un entorno donde la tranquilidad es una constante.  Somos un hogar pensado para la comodidad y salud de nuestros seres queridos.</p>
+        </section>
+
         <section id="servicios" class="container py-5 bg-light rounded">
             <h2 class="text-center mb-4">Servicios Personalizados</h2>
-            <p class="text-center mb-5">Ofrecemos una amplia gama de servicios personalizados para satisfacer las necesidades individuales de cada residente. Estos servicios incluyen atención médica 24/7, asistencia personal para actividades diarias, programas de rehabilitación, actividades recreativas y sociales variadas, comidas nutritivas y dietas especiales adaptadas, y servicio de lavandería y limpieza.</p>
-            
-            <div class="row mt-4 text-center">
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-user-nurse fa-3x mb-3 text-primary"></i>
-                        <h5>Enfermería 24 horas</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-stethoscope fa-3x mb-3 text-primary"></i>
-                        <h5>Visita Médica</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
-                        <h5>Salud Mental</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-utensils fa-3x mb-3 text-primary"></i>
-                        <h5>Alimentación Balanceada</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-home fa-3x mb-3 text-primary"></i>
-                        <h5>Estadía Flexible</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
-                        <h5>Ambiente Acogedor</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-tshirt fa-3x mb-3 text-primary"></i>
-                        <h5>Lavandería</h5>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="p-3 h-100 bg-white rounded shadow-sm">
-                        <i class="fas fa-hands-wash fa-3x mb-3 text-primary"></i>
-                        <h5>Cuidado Personal</h5>
-                    </div>
-                </div>
-            </div>
+            <p>Ofrecemos una amplia gama de servicios personalizados para satisfacer las necesidades individuales de cada residente. Estos servicios incluyen atención médica 24/7, asistencia personal para actividades diarias, programas de rehabilitación, actividades recreativas y sociales variadas, comidas nutritivas y dietas especiales adaptadas, y servicio de lavandería y limpieza.</p>
         </section>
 
         <section id="galeria" class="container py-5">
