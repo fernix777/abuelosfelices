@@ -1,0 +1,23 @@
+{
+  "name": "Residencia Adultos Felices",
+  "short_name": "Adultos Felices",
+  "description": "Residencia especializada en el cuidado de adultos mayores en Lima",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D4A017",
+  "icons": [
+    {
+      "src": "/images/logoabuelos.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logoabuelos.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

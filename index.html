@@ -33,8 +33,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"></noscript>
     <!-- Preload de imágenes críticas -->
-    <link rel="preload" as="image" href="images/portadaweb.jpeg" imagesrcset="images/portadaweb.jpeg 1x, images/portadaweb@2x.jpeg 2x">
-    <link rel="preload" as="image" href="images/abuelos1.jpg" imagesrcset="images/abuelos1.jpg 1x, images/abuelos1@2x.jpg 2x">
+    <link rel="preload" as="image" href="images/portadaweb.jpeg" fetchpriority="high">
     <!-- Preconnect a dominios externos -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -137,7 +136,8 @@
       }
     }
     </script>
-    <link rel="icon" href="images/logofavicon.png" type="image/png">
+    <link rel="icon" href="images/logofavicon.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/logofavicon.png">
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></noscript>
@@ -149,15 +149,14 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
     
     <!-- Preload de imágenes críticas -->
-    <link rel="preload" as="image" href="images/logoabuelos.png">
-    <link rel="preload" as="image" href="images/portadaweb.jpeg">
+    <link rel="preload" as="image" href="images/RESIDENCIAABUELOS.png" fetchpriority="high" imagesrcset="images/RESIDENCIAABUELOS.png 1x">
 </head>
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/images/RESIDENCIAABUELOS.png" alt="Logo Residencia Adultos Felices" loading="lazy">
+                <img src="images/RESIDENCIAABUELOS.png" alt="Logo Residencia Adultos Felices" loading="lazy" width="200" height="60">
                 <span>Residencia Adultos Felices</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -192,7 +191,7 @@
     <section id="inicio" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Bienvenidos a Residencia Adultos Felices</h1>
+            
             <p class="lead">Brindando cuidado y calidez a nuestros adultos mayores con amor y profesionalismo</p>
             <a href="#contacto" class="btn btn-primary btn-lg hero-cta">Solicitar Información</a>
         </div>
