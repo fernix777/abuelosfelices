@@ -25,6 +25,60 @@ body {
     position: relative;
 }
 
+/* Estilos para el Mapa */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+/* Estilos para la sección de contacto */
+.contact-info {
+    background-color: var(--background-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.contact-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
 /* Estilos para la sección Hero con Header Integrado */
 .hero-section {
     position: relative;
@@ -577,6 +631,29 @@ section#contacto .form-control {
 section#contacto .form-control:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem rgba(212, 160, 23, 0.25); /* Sombra con color primario */
+}
+
+/* Estilos para la dirección en el footer */
+.address-highlight {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .map-container {
+        height: 350px;
+        margin: 1rem 0;
+    }
+    
+    .contact-info {
+        padding: 1.5rem;
+    }
 }
 
 /* WhatsApp Floating Button */
