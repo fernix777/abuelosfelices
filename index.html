@@ -387,8 +387,7 @@
                 <!-- Formulario de contacto -->
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="contact-form-container h-100">
-                        <h3 class="mb-3">Envíanos un Mensaje</h3>
-                        <form action="https://formsubmit.co/residenciaadultosfelices@gmail.com" method="POST" id="contactForm">
+                        <h3 class="mb-3">Envíanos un Mensaje</h3>                        <form action="https://formsubmit.co/residenciaadultosfelices@gmail.com" method="POST" id="contactForm">
                             <div class="form-group">
                                 <label for="contactName">Nombre Completo</label>
                                 <input type="text" class="form-control" id="contactName" name="name" placeholder="Tu nombre completo" required>
@@ -406,8 +405,11 @@
                                 <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                            <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://residenciaadultosfelices.com">
+                            <input type="hidden" name="_captcha" value="true">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Residencia Adultos Felices">
+                            <input type="hidden" name="_autoresponse" value="Gracias por contactarnos. Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.">
                             <div id="formStatus" class="alert mt-3" style="display:none;"></div>
                         </form>
                     </div>
@@ -478,39 +480,18 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
-    <script>
+    <script src="js/main.js"></script>    <script>
     document.addEventListener('DOMContentLoaded', function() {
       var form = document.getElementById('contactForm');
-      var status = document.getElementById('formStatus');
       if(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var data = new FormData(form);
-          fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: {
-              'Accept': 'application/json'
-            }
-          }).then(function(response) {
-            if (response.ok) {
-              status.style.display = 'block';
-              status.className = 'alert alert-success';
-              status.innerText = '¡Gracias! Tu mensaje ha sido enviado correctamente.';
-              form.reset();
-            } else {
-              response.json().then(function(data) {
-                status.style.display = 'block';
-                status.className = 'alert alert-danger';
-                status.innerText = data.errors ? data.errors.map(function(error) { return error.message; }).join(', ') : 'Ocurrió un error al enviar el mensaje.';
-              });
-            }
-          }).catch(function(error) {
-            status.style.display = 'block';
-            status.className = 'alert alert-danger';
-            status.innerText = 'Ocurrió un error al enviar el mensaje.';
-          });
+        form.addEventListener('submit', function() {
+          // Mostrar mensaje de carga
+          var button = form.querySelector('button[type="submit"]');
+          button.disabled = true;
+          button.innerHTML = 'Enviando...';
+          
+          // FormSubmit.co se encargará del resto
+          return true;
         });
       }
     });
